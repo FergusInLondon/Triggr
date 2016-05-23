@@ -1,6 +1,7 @@
 # Work In Progress: Triggr
 
-[![Build Status](https://travis-ci.org/FergusInLondon/Triggr.svg?branch=master)](https://travis-ci.org/FergusInLondon/Triggr) [coverage]() [![Code Climate](https://codeclimate.com/github/FergusInLondon/Triggr/badges/gpa.svg)](https://codeclimate.com/github/FergusInLondon/Triggr) [![Issue Count](https://codeclimate.com/github/FergusInLondon/Triggr/badges/issue_count.svg)](https://codeclimate.com/github/FergusInLondon/Triggr)
+[![Build Status](https://travis-ci.org/FergusInLondon/Triggr.svg?branch=master)](https://travis-ci.org/FergusInLondon/Triggr) [![Test Coverage](https://codeclimate.com/github/FergusInLondon/Triggr/badges/coverage.svg)](https://codeclimate.com/github/FergusInLondon/Triggr/coverage) [![Code Climate](https://codeclimate.com/github/FergusInLondon/Triggr/badges/gpa.svg)](https://codeclimate.com/github/FergusInLondon/Triggr) [![Issue Count](https://codeclimate.com/github/FergusInLondon/Triggr/badges/issue_count.svg)](https://codeclimate.com/github/FergusInLondon/Triggr)
+--
 
 This is a Workflow Engine based on the [Hoa](http://hoa-project.net/En/) project's "[Ruler](http://hoa-project.net/En/Literature/Hack/Ruler.html)" library.
 
