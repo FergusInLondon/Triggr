@@ -1,5 +1,6 @@
 <?php namespace FergusInLondon\Triggr\Interfaces;
 
-interface ContextProviderInterface {
+interface ContextProviderInterface
+{
     public function getContext();
 }

@@ -6,7 +6,8 @@ abstract class AbstractRuleset
 {
     protected $ruler;
     
-    public function __construct() {
+    public function __construct()
+    {
         $this->ruler = new Ruler();
     }
     
@@ -24,8 +25,8 @@ abstract class AbstractRuleset
         }
         
         try {
-            return $this->ruler->assert($this->rule, $context);            
-        } catch(\Hoa\Ruler\Exception\Asserter $e) {
+            return $this->ruler->assert($this->rule, $context);
+        } catch (\Hoa\Ruler\Exception\Asserter $e) {
             // Yes, silencing an exception by simply returning false sounds like
             //  a really bad idea. And it is. Unless you want to continue beyond
             //  errors and have no expectations about the quality of the data
