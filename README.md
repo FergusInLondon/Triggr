@@ -1,5 +1,7 @@
 # Work In Progress: Triggr
 
+[![Build Status](https://travis-ci.org/FergusInLondon/Triggr.svg?branch=master)](https://travis-ci.org/FergusInLondon/Triggr) 
+
 This is a Workflow Engine based on the [Hoa](http://hoa-project.net/En/) project's "[Ruler](http://hoa-project.net/En/Literature/Hack/Ruler.html)" library.
 
 It's composed of `Ruleset` objects, a `ContextProvider` interface and a `EvaluationEngine`.
