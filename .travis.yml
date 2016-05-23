@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - '5.4'
+  - '5.5'
+  - '5.6'
+  - '7.0'
+
+before_script:
+  - travis_retry composer install --prefer-source --no-interaction --dev
+
+script:
+  - bin/phpcs --standard=PSR2 src
+  - bin/phpspec run --config=phpspec.yml --no-interaction
+  - bin/test-reporter
