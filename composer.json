@@ -1,0 +1,25 @@
+{
+    "name": "fergusinlondon/triggr",
+    "description": "A customisable workflow engine, built on Hoa's Ruler.",
+    "autoload": {
+        "psr-4": { "FergusInLondon\\Triggr\\": "src/" }
+    },
+    "authors": [
+        {
+            "name": "Fergus Morrow",
+            "email": "fergus@fergus.london"
+        }
+    ],
+    "require": {
+        "hoa/ruler" : "~2.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec" : "~2.0",
+        "henrikbjorn/phpspec-code-coverage": "^2.0",
+        "codeclimate/php-test-reporter": "dev-master",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "config": {
+        "bin-dir" : "bin"
+    }
+}
