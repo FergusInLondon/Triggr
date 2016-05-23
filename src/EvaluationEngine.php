@@ -13,7 +13,7 @@ class EvaluationEngine
         }
     }
 
-    public function addRuleset(Ruleset $ruleset)
+    public function addRuleset(AbstractRuleset $ruleset)
     {
         $this->rulesets[] = $ruleset;
     }
@@ -21,7 +21,7 @@ class EvaluationEngine
     public function addRulesets(array $rulesets)
     {
         foreach ($rulesets as $ruleset) {
-            if (! ($ruleset instanceof Ruleset)) {
+            if (! ($ruleset instanceof AbstractRuleset)) {
                 throw new \InvalidArgumentException(
                     "EvaluationEngine::addRulesets expects array of Ruleset objects."
                 );

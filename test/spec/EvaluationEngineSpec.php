@@ -23,21 +23,21 @@ class EvaluationEngineSpec extends ObjectBehavior
     
     function it_should_should_accept_ruleset($ruleset)
     {
-        $ruleset->beADoubleOf('FergusInLondon\Triggr\Ruleset');        
+        $ruleset->beADoubleOf('spec\Concrete\Ruleset');        
         $this->addRuleset($ruleset);
     }
     
     function it_should_accept_an_array_of_rulesets($rulesetA, $rulesetB)
     {
-        $rulesetA->beADoubleOf('FergusInLondon\Triggr\Ruleset');
-        $rulesetB->beADoubleOf('FergusInLondon\Triggr\Ruleset');
+        $rulesetA->beADoubleOf('spec\Concrete\Ruleset');
+        $rulesetB->beADoubleOf('spec\Concrete\Ruleset');
         
         $this->addRulesets([$rulesetA, $rulesetB]);
     }
     
     function it_should_reject_non_ruleset_array_members($ruleset)
     {
-        $ruleset->beADoubleOf('FergusInLondon\Triggr\Ruleset');
+        $ruleset->beADoubleOf('spec\Concrete\Ruleset');
         
         $this
             ->shouldThrow(new \InvalidArgumentException("EvaluationEngine::addRulesets expects array of Ruleset objects."))
@@ -47,9 +47,9 @@ class EvaluationEngineSpec extends ObjectBehavior
     function it_should_evaluate_all_rulesets(
         $rulesetA, $rulesetB, $rulesetC, $contextProvider
     ) {
-        $rulesetA->beADoubleOf('FergusInLondon\Triggr\Ruleset');
-        $rulesetB->beADoubleOf('FergusInLondon\Triggr\Ruleset');
-        $rulesetC->beADoubleOf('FergusInLondon\Triggr\Ruleset');
+        $rulesetA->beADoubleOf('spec\Concrete\Ruleset');
+        $rulesetB->beADoubleOf('spec\Concrete\Ruleset');
+        $rulesetC->beADoubleOf('spec\Concrete\Ruleset');
         $contextProvider->beADoubleOf(
             'FergusInLondon\Triggr\Interfaces\ContextProviderInterface'
         );
@@ -65,8 +65,8 @@ class EvaluationEngineSpec extends ObjectBehavior
     
     function it_should_call_action_method_when_ruleset_passes($ruleFail, $rulePass, $contextProvider)
     {
-        $rulePass->beADoubleOf('FergusInLondon\Triggr\Ruleset');
-        $ruleFail->beADoubleOf('FergusInLondon\Triggr\Ruleset');
+        $rulePass->beADoubleOf('spec\Concrete\Ruleset');
+        $ruleFail->beADoubleOf('spec\Concrete\Ruleset');
         $contextProvider->beADoubleOf(
             'FergusInLondon\Triggr\Interfaces\ContextProviderInterface'
         );
@@ -80,4 +80,27 @@ class EvaluationEngineSpec extends ObjectBehavior
         $this->addRulesets([$rulePass, $ruleFail]);
         $this->evaluate($contextProvider);
     }
+    
+    /** WIP: Features to be implemented.
+    
+    function it_can_accept_arrays_of_()
+    {
+        // Pass in an array like [
+        //   ARuleSet::class,  
+        //   AnotherRuleset::class,
+        //   AndAnotherRuleset::class,
+        //   AndSoOn::class
+        // ]
+        
+        // Then test like Ruleset addition above.
+    }
+    
+    function it_can_accept_custom_functions()
+    {
+        // Pass an identifier and callable to the EvaluationEngine
+        
+        // Check it's registered with Hoa Ruler object
+    }
+    
+    **/
 }

@@ -2,7 +2,10 @@
     "name": "fergusinlondon/triggr",
     "description": "A customisable workflow engine, built on Hoa's Ruler.",
     "autoload": {
-        "psr-4": { "FergusInLondon\\Triggr\\": "src/" }
+        "psr-4": {
+            "FergusInLondon\\Triggr\\": "src/",
+            "spec\\Concrete\\": "test/spec/concrete"
+        }
     },
     "authors": [
         {
