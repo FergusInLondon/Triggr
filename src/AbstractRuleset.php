@@ -35,7 +35,7 @@ abstract class AbstractRuleset
             throw new \InvalidArgumentException("ContextProvider::getContext should return valid Hoa Ruler context.");
         }
         
-        // Ensure that $this->rule is set correctly        
+        // Ensure that $this->rule is set correctly
         if (!is_string($this->rule)) {
             throw new \LogicException("Ruleset objects must have protected property AbstractRuleset::rule!");
         }
@@ -57,7 +57,7 @@ abstract class AbstractRuleset
      * This is the method that get's called when a given Ruleset is satsified.
      *
      * @param \FergusInLondon\Triggr\Interfaces\ContextProviderInterface $contextProvider
-     */    
+     */
     abstract public function action(
         \FergusInLondon\Triggr\Interfaces\ContextProviderInterface $contextProvider
     );

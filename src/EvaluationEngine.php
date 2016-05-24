@@ -7,7 +7,7 @@ class EvaluationEngine
     /** @var AbstractRuleset[] */
     private $rulesets = array();
 
-    /** @var \Hoa\Ruler\Ruler  */    
+    /** @var \Hoa\Ruler\Ruler  */
     private $ruler;
     
     public function __construct()
