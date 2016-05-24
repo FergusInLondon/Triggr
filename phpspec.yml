@@ -11,5 +11,5 @@ code_coverage:
   output:
     clover: build/logs/clover.xml
 
-#extensions:
-#    - PhpSpec\Extension\CodeCoverageExtension
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
