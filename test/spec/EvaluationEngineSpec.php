@@ -57,10 +57,10 @@ class EvaluationEngineSpec extends ObjectBehavior
         $this->addRuleset($rulesetA);
         $this->addRulesets([$rulesetB, $rulesetC]);
         $this->evaluate($contextProvider);
-        
-        $rulesetA->evaluate($contextProvider)->shouldHaveBeenCalled();
-        $rulesetB->evaluate($contextProvider)->shouldHaveBeenCalled();
-        $rulesetC->evaluate($contextProvider)->shouldHaveBeenCalled();
+
+        $rulesetA->evaluate(Argument::type('Hoa\Ruler\Ruler'), $contextProvider)->shouldHaveBeenCalled();
+        $rulesetB->evaluate(Argument::type('Hoa\Ruler\Ruler'), $contextProvider)->shouldHaveBeenCalled();
+        $rulesetC->evaluate(Argument::type('Hoa\Ruler\Ruler'), $contextProvider)->shouldHaveBeenCalled();
     }
     
     function it_should_call_action_method_when_ruleset_passes($ruleFail, $rulePass, $contextProvider)
@@ -71,10 +71,10 @@ class EvaluationEngineSpec extends ObjectBehavior
             'FergusInLondon\Triggr\Interfaces\ContextProviderInterface'
         );
         
-        $rulePass->evaluate($contextProvider)->willReturn(true);
+        $rulePass->evaluate(Argument::type('Hoa\Ruler\Ruler'), $contextProvider)->willReturn(true);
         $rulePass->action($contextProvider)->shouldBeCalled();
         
-        $ruleFail->evaluate($contextProvider)->willReturn(false);        
+        $ruleFail->evaluate(Argument::type('Hoa\Ruler\Ruler'), $contextProvider)->willReturn(false);        
         $ruleFail->action($contextProvider)->shouldNotBeCalled();
         
         $this->addRulesets([$rulePass, $ruleFail]);

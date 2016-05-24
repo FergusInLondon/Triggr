@@ -21,26 +21,34 @@ class AbstractRulesetSpec extends ObjectBehavior
         $this->evaluate($contextProvider);        
     }
     
-    function it_should_accept_valid_hoa_context($contextProvider)
+    function it_should_accept_valid_hoa_context($contextProvider, $ruler)
     {
         $contextProvider->beADoubleOf(
             'FergusInLondon\Triggr\Interfaces\ContextProviderInterface'
         );
         
+        $ruler->beADoubleOf(
+            'Hoa\Ruler\Ruler'
+        );
+        
         $contextProvider->getContext()->willReturn(new \Hoa\Ruler\Context);
-        $this->evaluate($contextProvider);
+        $this->evaluate($ruler, $contextProvider);
     }
     
-    function it_should_throw_an_exception_if_context_is_not_valid($contextProvider)
+    function it_should_throw_an_exception_if_context_is_not_valid($contextProvider, $ruler)
     {
         $contextProvider->beADoubleOf(
             'FergusInLondon\Triggr\Interfaces\ContextProviderInterface'
+        );
+        
+        $ruler->beADoubleOf(
+            'Hoa\Ruler\Ruler'
         );
         
         $contextProvider->getContext()->willReturn(array());
         $this
             ->shouldThrow(new \InvalidArgumentException("ContextProvider::getContext should return valid Hoa Ruler context."))
-            ->during('evaluate', [$contextProvider]);
+            ->during('evaluate', [$ruler, $contextProvider]);
     }
     
     function is_correctly_returning_false_from_ruler()
